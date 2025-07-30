@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Menu, Home, Plus, Map, FileText } from "lucide-react"
 import { ModeToggle } from "./theme-toggle"
-import { useNavigate, useLocation } from "react-router"
+import { useNavigate, useLocation } from "react-router-dom"
 
 type AppBarProps = {
   onMenuClick?: () => void
