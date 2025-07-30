@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useLocalStorage } from "@/hooks/useLocalStorage"
-import type { Skill } from "@/types/skill"
 import { Plus, BookOpen, Target, TrendingUp, Award } from "lucide-react"
 import { useNavigate } from "react-router"
+
+import type { Skill } from "@/types/skill"
 
 // Temporary mock data for demonstration
 const mockSkills: Skill[] = [
