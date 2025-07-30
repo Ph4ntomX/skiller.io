@@ -3,7 +3,19 @@ import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Calendar, Edit, Eye, Target } from "lucide-react"
-import { Skill } from "@/types/skill"
+//import { Skill } from "@/types/skill"
+
+interface Skill {
+  id: string
+  name: string
+  description: string
+  category: string
+  progress: number // 0-100
+  targetDate?: string
+  createdAt: string
+  updatedAt: string
+  status: 'not-started' | 'in-progress' | 'completed'
+}
 
 interface SkillCardProps {
   skill: Skill
