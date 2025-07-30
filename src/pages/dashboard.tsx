@@ -8,6 +8,18 @@ import { Skill } from "@/types/skill"
 import { Plus, BookOpen, Target, TrendingUp, Award } from "lucide-react"
 import { useNavigate } from "react-router"
 
+interface Skill {
+  id: string
+  name: string
+  description: string
+  category: string
+  progress: number // 0-100
+  targetDate?: string
+  createdAt: string
+  updatedAt: string
+  status: 'not-started' | 'in-progress' | 'completed'
+}
+
 // Temporary mock data for demonstration
 const mockSkills: Skill[] = [
   {
