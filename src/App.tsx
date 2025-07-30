@@ -14,8 +14,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/about" element={<Creation />} />
-          <Route path="/contact" element={<Roadmap />} />
+          <Route path="/creation" element={<Creation />} />
+          <Route path="/roadmap" element={<Roadmap />} />
           <Route path="*" element={<Summary />} />
         </Routes>
       </Router>
