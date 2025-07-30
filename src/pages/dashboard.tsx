@@ -4,21 +4,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useLocalStorage } from "@/hooks/useLocalStorage"
-// import { Skill } from "@/types/skill"
+import { Skill } from "@/types/skill"
 import { Plus, BookOpen, Target, TrendingUp, Award } from "lucide-react"
 import { useNavigate } from "react-router"
-
-interface Skill {
-  id: string
-  name: string
-  description: string
-  category: string
-  progress: number // 0-100
-  targetDate?: string
-  createdAt: string
-  updatedAt: string
-  status: 'not-started' | 'in-progress' | 'completed'
-}
 
 // Temporary mock data for demonstration
 const mockSkills: Skill[] = [
