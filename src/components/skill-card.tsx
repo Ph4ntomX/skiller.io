@@ -75,7 +75,7 @@ export function SkillCard({ skill, onEdit, onView, onToggleMilestone }: SkillCar
           </div>
           
           <div className="space-y-2 max-h-32 overflow-y-auto">
-            {skill.milestones.slice(0, 3).map((milestone) => (
+            {skill.milestones.map((milestone) => (
               <div 
                 key={milestone.id} 
                 className="flex items-center gap-2 text-sm cursor-pointer hover:bg-muted/50 p-1 rounded transition-colors"
@@ -91,11 +91,6 @@ export function SkillCard({ skill, onEdit, onView, onToggleMilestone }: SkillCar
                 </span>
               </div>
             ))}
-            {skill.milestones.length > 3 && (
-              <div className="text-xs text-muted-foreground text-center py-1">
-                +{skill.milestones.length - 3} more milestones
-              </div>
-            )}
           </div>
         </div>
 
