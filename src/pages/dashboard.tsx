@@ -34,7 +34,12 @@ const mockSkills: Skill[] = [
     name: 'React Development',
     description: 'Master modern React development with hooks, context, and advanced patterns',
     category: 'Frontend Development',
-    progress: 75,
+    milestones: [
+      { id: '1-1', title: 'Learn React Basics', description: 'Components, JSX, props', completed: true, completedAt: '2025-01-10T00:00:00Z' },
+      { id: '1-2', title: 'Master React Hooks', description: 'useState, useEffect, custom hooks', completed: true, completedAt: '2025-01-15T00:00:00Z' },
+      { id: '1-3', title: 'Context API & State Management', description: 'useContext, useReducer', completed: true, completedAt: '2025-01-20T00:00:00Z' },
+      { id: '1-4', title: 'Advanced Patterns', description: 'HOCs, render props, compound components', completed: false },
+    ],
     targetDate: '2025-03-15',
     createdAt: '2025-01-01T00:00:00Z',
     updatedAt: '2025-01-15T00:00:00Z',
@@ -45,7 +50,13 @@ const mockSkills: Skill[] = [
     name: 'TypeScript Fundamentals',
     description: 'Learn TypeScript basics, advanced types, and best practices',
     category: 'Programming Languages',
-    progress: 90,
+    milestones: [
+      { id: '2-1', title: 'Basic Types', description: 'string, number, boolean, arrays', completed: true, completedAt: '2024-12-20T00:00:00Z' },
+      { id: '2-2', title: 'Interfaces & Types', description: 'Custom types and interfaces', completed: true, completedAt: '2025-01-05T00:00:00Z' },
+      { id: '2-3', title: 'Generics', description: 'Generic functions and classes', completed: true, completedAt: '2025-01-15T00:00:00Z' },
+      { id: '2-4', title: 'Advanced Types', description: 'Utility types, conditional types', completed: true, completedAt: '2025-01-18T00:00:00Z' },
+      { id: '2-5', title: 'Best Practices', description: 'Configuration, linting, project setup', completed: false },
+    ],
     targetDate: '2025-02-28',
     createdAt: '2024-12-15T00:00:00Z',
     updatedAt: '2025-01-20T00:00:00Z',
@@ -56,7 +67,13 @@ const mockSkills: Skill[] = [
     name: 'Node.js Backend',
     description: 'Build scalable backend applications with Node.js and Express',
     category: 'Backend Development',
-    progress: 45,
+    milestones: [
+      { id: '3-1', title: 'Node.js Basics', description: 'Modules, file system, events', completed: true, completedAt: '2025-01-12T00:00:00Z' },
+      { id: '3-2', title: 'Express Framework', description: 'Routing, middleware, templates', completed: true, completedAt: '2025-01-18T00:00:00Z' },
+      { id: '3-3', title: 'Database Integration', description: 'MongoDB, Mongoose, queries', completed: false },
+      { id: '3-4', title: 'Authentication', description: 'JWT, sessions, security', completed: false },
+      { id: '3-5', title: 'API Development', description: 'RESTful APIs, validation, testing', completed: false },
+    ],
     targetDate: '2025-04-30',
     createdAt: '2025-01-10T00:00:00Z',
     updatedAt: '2025-01-22T00:00:00Z',
@@ -67,7 +84,12 @@ const mockSkills: Skill[] = [
     name: 'Database Design',
     description: 'Learn SQL, database normalization, and optimization techniques',
     category: 'Database',
-    progress: 100,
+    milestones: [
+      { id: '4-1', title: 'SQL Basics', description: 'SELECT, INSERT, UPDATE, DELETE', completed: true, completedAt: '2024-11-15T00:00:00Z' },
+      { id: '4-2', title: 'Database Design', description: 'Normalization, relationships, ERD', completed: true, completedAt: '2024-12-01T00:00:00Z' },
+      { id: '4-3', title: 'Advanced Queries', description: 'JOINs, subqueries, functions', completed: true, completedAt: '2024-12-10T00:00:00Z' },
+      { id: '4-4', title: 'Performance Optimization', description: 'Indexing, query optimization', completed: true, completedAt: '2024-12-20T00:00:00Z' },
+    ],
     createdAt: '2024-11-01T00:00:00Z',
     updatedAt: '2024-12-20T00:00:00Z',
     status: 'completed'
@@ -77,7 +99,13 @@ const mockSkills: Skill[] = [
     name: 'UI/UX Design Principles',
     description: 'Understand design thinking, user research, and interface design',
     category: 'Design',
-    progress: 20,
+    milestones: [
+      { id: '5-1', title: 'Design Fundamentals', description: 'Color theory, typography, layout', completed: true, completedAt: '2025-01-21T00:00:00Z' },
+      { id: '5-2', title: 'User Research', description: 'Personas, user interviews, surveys', completed: false },
+      { id: '5-3', title: 'Wireframing', description: 'Low-fi and high-fi wireframes', completed: false },
+      { id: '5-4', title: 'Prototyping', description: 'Interactive prototypes, user testing', completed: false },
+      { id: '5-5', title: 'Design Systems', description: 'Component libraries, style guides', completed: false },
+    ],
     targetDate: '2025-06-15',
     createdAt: '2025-01-20T00:00:00Z',
     updatedAt: '2025-01-22T00:00:00Z',
@@ -88,7 +116,13 @@ const mockSkills: Skill[] = [
     name: 'DevOps Fundamentals',
     description: 'Learn CI/CD, containerization, and cloud deployment strategies',
     category: 'DevOps',
-    progress: 0,
+    milestones: [
+      { id: '6-1', title: 'Version Control', description: 'Git workflows, branching strategies', completed: false },
+      { id: '6-2', title: 'Containerization', description: 'Docker, container orchestration', completed: false },
+      { id: '6-3', title: 'CI/CD Pipelines', description: 'Automated testing, deployment', completed: false },
+      { id: '6-4', title: 'Cloud Platforms', description: 'AWS, Azure, or GCP basics', completed: false },
+      { id: '6-5', title: 'Monitoring', description: 'Logging, metrics, alerting', completed: false },
+    ],
     targetDate: '2025-08-01',
     createdAt: '2025-01-22T00:00:00Z',
     updatedAt: '2025-01-22T00:00:00Z',
@@ -107,6 +141,44 @@ function Dashboard() {
   const [categoryFilter, setCategoryFilter] = useLocalStorage<string>('skills-category-filter', 'all')
   const [sortBy, setSortBy] = useLocalStorage<string>('skills-sort', 'name')
 
+  const handleToggleMilestone = (skillId: string, milestoneId: string) => {
+    setSkills(prevSkills => 
+      prevSkills.map(skill => {
+        if (skill.id === skillId) {
+          const updatedMilestones = skill.milestones.map(milestone => {
+            if (milestone.id === milestoneId) {
+              const isCompleting = !milestone.completed
+              return {
+                ...milestone,
+                completed: isCompleting,
+                completedAt: isCompleting ? new Date().toISOString() : undefined
+              }
+            }
+            return milestone
+          })
+          
+          // Update skill status based on milestone completion
+          const completedCount = updatedMilestones.filter(m => m.completed).length
+          const totalCount = updatedMilestones.length
+          let newStatus: Skill['status'] = 'not-started'
+          
+          if (completedCount === totalCount) {
+            newStatus = 'completed'
+          } else if (completedCount > 0) {
+            newStatus = 'in-progress'
+          }
+          
+          return {
+            ...skill,
+            milestones: updatedMilestones,
+            status: newStatus,
+            updatedAt: new Date().toISOString()
+          }
+        }
+        return skill
+      })
+    )
+  }
   const handleEditSkill = (skill: Skill) => {
     // Navigate to creation page with skill data
     navigate('/creation', { state: { skill } })
@@ -135,7 +207,9 @@ function Dashboard() {
         case 'name':
           return a.name.localeCompare(b.name)
         case 'progress':
-          return b.progress - a.progress
+          const aProgress = a.milestones.length > 0 ? (a.milestones.filter(m => m.completed).length / a.milestones.length) * 100 : 0
+          const bProgress = b.milestones.length > 0 ? (b.milestones.filter(m => m.completed).length / b.milestones.length) * 100 : 0
+          return bProgress - aProgress
         case 'category':
           return a.category.localeCompare(b.category)
         case 'status':
@@ -157,7 +231,12 @@ function Dashboard() {
   const completedSkills = skills.filter(skill => skill.status === 'completed').length
   const inProgressSkills = skills.filter(skill => skill.status === 'in-progress').length
   const averageProgress = totalSkills > 0 
-    ? Math.round(skills.reduce((sum, skill) => sum + skill.progress, 0) / totalSkills)
+    ? Math.round(skills.reduce((sum, skill) => {
+        const skillProgress = skill.milestones.length > 0 
+          ? (skill.milestones.filter(m => m.completed).length / skill.milestones.length) * 100 
+          : 0
+        return sum + skillProgress
+      }, 0) / totalSkills)
     : 0
 
   return (
@@ -305,6 +384,7 @@ function Dashboard() {
                 skill={skill}
                 onEdit={handleEditSkill}
                 onView={handleViewSkill}
+                onToggleMilestone={handleToggleMilestone}
               />
             ))}
           </div>

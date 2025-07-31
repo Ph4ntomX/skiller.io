@@ -1,9 +1,17 @@
+export interface Milestone {
+  id: string
+  title: string
+  description?: string
+  completed: boolean
+  completedAt?: string
+}
+
 export interface Skill {
   id: string
   name: string
   description: string
   category: string
-  progress: number // 0-100
+  milestones: Milestone[]
   targetDate?: string
   createdAt: string
   updatedAt: string

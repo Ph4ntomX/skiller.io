@@ -1,17 +1,17 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Calendar, Edit, Eye, Target } from "lucide-react"
-import type { Skill } from "@/types/skill"
+import { Calendar, Edit, Eye, Target, CheckCircle2, Circle } from "lucide-react"
+import type { Skill, Milestone } from "@/types/skill"
 
 interface SkillCardProps {
   skill: Skill
   onEdit?: (skill: Skill) => void
   onView?: (skill: Skill) => void
+  onToggleMilestone?: (skillId: string, milestoneId: string) => void
 }
 
-export function SkillCard({ skill, onEdit, onView }: SkillCardProps) {
+export function SkillCard({ skill, onEdit, onView, onToggleMilestone }: SkillCardProps) {
   const getStatusColor = (status: Skill['status']) => {
     switch (status) {
       case 'completed':
@@ -46,6 +46,9 @@ export function SkillCard({ skill, onEdit, onView }: SkillCardProps) {
     })
   }
 
+  const completedMilestones = skill.milestones.filter(m => m.completed).length
+  const totalMilestones = skill.milestones.length
+  const progressPercentage = totalMilestones > 0 ? Math.round((completedMilestones / totalMilestones) * 100) : 0
   return (
     <Card className="group hover:shadow-lg transition-all duration-200 hover:scale-[1.02]">
       <CardHeader className="pb-3">
@@ -65,12 +68,35 @@ export function SkillCard({ skill, onEdit, onView }: SkillCardProps) {
       </CardHeader>
       
       <CardContent className="space-y-4">
-        <div className="space-y-2">
+        <div className="space-y-3">
           <div className="flex items-center justify-between text-sm">
-            <span className="text-muted-foreground">Progress</span>
-            <span className="font-medium">{skill.progress}%</span>
+            <span className="text-muted-foreground">Milestones</span>
+            <span className="font-medium">{completedMilestones}/{totalMilestones} ({progressPercentage}%)</span>
           </div>
-          <Progress value={skill.progress} className="h-2" />
+          
+          <div className="space-y-2 max-h-32 overflow-y-auto">
+            {skill.milestones.slice(0, 3).map((milestone) => (
+              <div 
+                key={milestone.id} 
+                className="flex items-center gap-2 text-sm cursor-pointer hover:bg-muted/50 p-1 rounded transition-colors"
+                onClick={() => onToggleMilestone?.(skill.id, milestone.id)}
+              >
+                {milestone.completed ? (
+                  <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+                ) : (
+                  <Circle className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+                )}
+                <span className={`line-clamp-1 ${milestone.completed ? 'line-through text-muted-foreground' : ''}`}>
+                  {milestone.title}
+                </span>
+              </div>
+            ))}
+            {skill.milestones.length > 3 && (
+              <div className="text-xs text-muted-foreground text-center py-1">
+                +{skill.milestones.length - 3} more milestones
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="flex items-center gap-4 text-sm text-muted-foreground">
