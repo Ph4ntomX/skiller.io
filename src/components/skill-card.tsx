@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Progress } from "@/components/ui/progress"
 import { Calendar, Edit, Eye, Target, CheckCircle2, Circle } from "lucide-react"
 import type { Skill, Milestone } from "@/types/skill"
 
@@ -73,6 +74,8 @@ export function SkillCard({ skill, onEdit, onView, onToggleMilestone }: SkillCar
             <span className="text-muted-foreground">Milestones</span>
             <span className="font-medium">{completedMilestones}/{totalMilestones} ({progressPercentage}%)</span>
           </div>
+          
+          <Progress value={progressPercentage} className="h-2" />
           
           <div className="space-y-2 max-h-32 overflow-y-auto">
             {skill.milestones.map((milestone) => (
